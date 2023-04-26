@@ -8,19 +8,20 @@ export default function EditProductPage() {
     const [productInfo, setProductinfo] = useState(null);
     const router = useRouter();
     const {id} = router.query;
-    console.log(id);
     useEffect(() =>{
         if(!id) {
             return;
         }
         axios.get('/api/productsAPI?id=' +id).then(response => {
-            // setProductinfo(response.data);
-            console.log(response.data);
+            setProductinfo(response.data);
+            // console.log(response.data);
         });
     }, [id]);
     return (
         <Layout>
-            <ProductForm {...productInfo}></ProductForm>
+            <h1>Edit Product</h1>
+            {productInfo && (
+            <ProductForm {...productInfo}></ProductForm>)}
         </Layout>
-    )
+    );
 }
