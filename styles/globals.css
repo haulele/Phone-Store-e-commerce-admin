@@ -6,12 +6,12 @@ img{
   max-height: 100%;
 }
 
-input, textarea{
+input, textarea, select{
   @apply border-2 border-blue-900 rounded-md px-1 w-full;
   @apply mb-2;
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
   @apply border-blue-900;
 }
 h1{
@@ -36,10 +36,10 @@ table.basic a{
   @apply text-white text-sm py-1 px-2 rounded-md inline-flex gap-1 mr-1;
 }
 .edit-btn{
-  @apply bg-blue-900;
+  @apply bg-blue-900 px-4 text-white py-1 rounded-md;
 }
 .del-btn{
-  @apply bg-red-700;
+  @apply bg-red-700 px-4 text-white py-1 rounded-md;
 }
 .btn-default, .btn-red {
   @apply px-4 py-1 rounded-md;
