@@ -29,6 +29,11 @@ function Categories ({swal}) {
                 values: p.values.split(','),
             })),
         };
+        if(!name) {
+            return swal.fire({
+                title: 'Category name should not be empty, please fill it',
+            });
+        }
         if(editedCategory) {
             data._id = editedCategory._id;
             await axios.put('/api/categoriesAPI', data);
